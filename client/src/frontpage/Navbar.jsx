@@ -1,6 +1,7 @@
-
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import logo from "../assets/images/logo.png"
+
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -10,7 +11,7 @@ function Navbar() {
   };
 
   return (
-    <nav className="flex justify-between items-center w-full bg-white px-4 py-2 font-poppins">
+    <nav className="flex justify-between items-center w-full bg-white px-4 py-2 font-poppins border-b border-gray-300">
       {/* Hamburger Menu Icon */}
       {/* <div
         id="menu"
@@ -34,61 +35,66 @@ function Navbar() {
         ></div>
       </div> */}
 
-     
       <div
-  className={`fixed top-0 left-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 z-40 ${
-    menuOpen ? "translate-x-0" : "-translate-x-full"
-  }`}
->
-  <button
-    className="text-black p-4 font-bold absolute top-4 right-4"
-    onClick={toggleMenu}
-    aria-label="Close Menu"
-  >
-    
-  </button>
-  <ul className="space-y-4 pl-8 pr-4 pt-4 pb-4 mt-20"> {/* Added margin-top to move items down */}
-    <li>
-      <a href="/" className="text-black hover:text-gray-700"style={{ fontSize: "22px" }}>
-        Home
-      </a>
-    </li>
-    <li>
-      <a href="#" className="text-black hover:text-gray-700"style={{ fontSize: "22px" }}>
-        Contact
-      </a>
-    </li>
-    <li>
-      <a href="#" className="text-black hover:text-gray-700"style={{ fontSize: "22px" }}>
-        About Us
-      </a>
-    </li>
-    <li>
-      <Link to="/login" className="text-black hover:text-gray-700"style={{ fontSize: "22px" }}>
-        Log in & Sign up
-      </Link>
-    </li>
-  </ul>
-</div>
-
+        className={`fixed top-0 left-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 z-40 ${
+          menuOpen ? "translate-x-0" : "-translate-x-full"
+        }`}
+      >
+        <button
+          className="text-black p-4 font-bold absolute top-4 right-4"
+          onClick={toggleMenu}
+          aria-label="Close Menu"
+        ></button>
+        <ul className="space-y-4 pl-8 pr-4 pt-4 pb-4 mt-20"> {/* Added margin-top to move items down */}
+          <li>
+            <a href="/" className="text-black hover:text-gray-700" style={{ fontSize: "22px" }}>
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="#" className="text-black hover:text-gray-700" style={{ fontSize: "22px" }}>
+              Contact
+            </a>
+          </li>
+          <li>
+            <a href="#" className="text-black hover:text-gray-700" style={{ fontSize: "22px" }}>
+              About Us
+            </a>
+          </li>
+          <li>
+            <Link to="/login" className="text-black hover:text-gray-700" style={{ fontSize: "22px" }}>
+              Log in & Sign up
+            </Link>
+          </li>
+        </ul>
+      </div>
 
       {/* Logo Section */}
-      <div className="w-2/3 flex place-content-end">
-  <a href="/" target="_blank" rel="noopener noreferrer">
- 
-    <img src="/src/assets/images/logo.png" alt="Viu" className="w-26 h-16 pr-64" />
-  </a>
-</div>
+      <div className="w-2/3 flex place-content-start">
+        <a href="/" rel="noopener noreferrer">
+          <img src={logo} alt="" className="w-32 h-16" />
+        </a>
+      </div>
 
-
-      {/* Placeholder for other content */}
-      <div className="w-1/3 flex justify-end space-x-14">
+      <div className="w-full flex justify-end items-center space-x-6">
+        {/* Track Order Text */}
         <div className="text-black cursor-pointer">Track Order</div>
-        <Link to="/login" className="text-black cursor-pointer">
-        Log in & Sign up
-      </Link>
-        <div className="text-black cursor-pointer">Wishlist</div>
-        <div className="text-black cursor-pointer">Cart</div>
+
+        {/* Login Button with Border */}
+        <Link
+          to="/login"
+          className="text-[#0062B6] border-2 border-[#0062B6] py-2 px-6 rounded-md font-semibold"
+        >
+          Log In
+        </Link>
+
+        {/* Sign Up Button */}
+        <Link
+          to="/select"
+          className="text-white bg-[#0062B6] py-2 px-6 rounded-md font-semibold hover:bg-[#004C8C] transition-all duration-300"
+        >
+          Sign Up
+        </Link>
       </div>
 
       {/* Background Overlay */}
