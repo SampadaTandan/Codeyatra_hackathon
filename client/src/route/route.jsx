@@ -1,5 +1,5 @@
 import { Navigate } from "react-router-dom";
-import Home from "../component/home";
+import Home from "../component/Home";
 import Applayout from "../component/layout/applayout";
 import Login from "../component/Login";
 import Signup from "../component/signup";
@@ -11,11 +11,11 @@ const routes = [
       children:[
         {
             index: true,
-            element: <Navigate to="/home" replace />
+            element: <Navigate to="/" replace />
           },
    
         {
-          path: "/home",
+          path: "/",
           element: <Home />,
           
         },
