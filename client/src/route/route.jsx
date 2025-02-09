@@ -1,6 +1,6 @@
 import { Navigate } from "react-router-dom";
 import Home from "../component/Home";
-// import Applayout from "../component/layout/applayout";
+import Applayout from "../component/layout/applayout";
 import Login from "../component/Login";
 import Signup from "../component/signup";
 import Select from "../component/select";
