@@ -3,6 +3,7 @@ import Home from "../component/home";
 import Applayout from "../component/layout/applayout";
 import Login from "../component/Login";
 import Signup from "../component/signup";
+import Select from "../component/select";
 const routes = [
     {
       path: "/",
@@ -26,6 +27,11 @@ const routes = [
           {
             path: "/signup",
             element: <Signup/>,
+            
+          },
+          {
+            path: "/select",
+            element: <Select/>,
             
           },
   ]
