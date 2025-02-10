@@ -1,10 +1,10 @@
 import { Navigate } from "react-router-dom";
-import Home from "../component/home";
+import Home from "../component/Home";
 import Applayout from "../component/layout/applayout";
 import Login from "../component/Login";
 import Signup from "../component/signup";
 import Select from "../component/select";
-import FormComponent from "../component/form";  // Assuming you have a separate form component
+import FormComponent from "../component/form"; // Assuming you have a separate form component
 import Subs from "../component/subs";
 import Checkout from "../component/Checkout";
 import Isignup from "../component/Isignup";
@@ -45,11 +45,11 @@ const routes = [
       },
       {
         path: "/subs",
-        element: <Subs/>,
+        element: <Subs />,
       },
       {
         path: "/checkout",
-        element: <Checkout/>,
+        element: <Checkout />,
       },
       {
         path: "/select/isignup",

@@ -2,34 +2,30 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const router = require("./router/auth-router");
+const businessRouter = require("./router/business-router"); // Import the new business router
 // const adminRoute = require("./router/admin-router");
 
 const connectDb = require("./utils/db");
 // const errorMiddleware = require("./middlewares/error-middleware");
 
-
 const app = express();
 
 // CORS Configuration
 const corsOptions = {
-  origin: "http://localhost:5175", // Update this to match your frontend's URL
+  origin: "http://localhost:5173", // Update this to match your frontend's URL
   methods: "GET, POST, PUT, DELETE, PATCH, HEAD",
   credentials: true,
 };
-
-
-
 
 app.use(cors(corsOptions));
 app.use(express.json()); // Middleware to parse JSON data
 
 // Mount Routers
 app.use("/api/auth", router);
-
+app.use("/api/business", businessRouter); // Mount the new business router
 
 // Admin Routes (Includes Analytics)
 // app.use("/api/admin", adminRoute);
-
 
 // Error Handling Middleware
 // app.use(errorMiddleware);
