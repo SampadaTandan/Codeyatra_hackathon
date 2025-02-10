@@ -21,7 +21,7 @@ data = pd.DataFrame([
     ["MegaMines Corp", "Mining", "Coal & mineral extraction", "Mature", "Global", "Commodity Sales", 35, 100, "High", 12],
     ["Cloud IT Solutions", "Information Tech", "Cloud computing services", "Scaling", "Businesses", "SaaS", 45, 90, "N/A", 30],
 ], columns=["Business Name", "Industry Type", "Product/Service Details", "Stage of Development", 
-            "Target Market", "Revenue Model", "Profit Margin", "Valuation (lakh)", "AQI Impact", "ROI"])
+            "Target Market", "Revenue Model", "Profit Margin", "Valuation", "AQI Impact", "ROI"])
 
 # Drop non-useful columns for training
 data = data.drop(columns=["Business Name", "Product/Service Details"])
@@ -33,7 +33,7 @@ label_features = ["AQI Impact"]  # AQI is categorical
 # Preprocessing
 preprocessor = ColumnTransformer([
     ("onehot", OneHotEncoder(handle_unknown="ignore"), categorical_features),
-    ("scaler", StandardScaler(), ["Profit Margin", "Valuation (lakh)"])
+    ("scaler", StandardScaler(), ["Profit Margin", "Valuation"])
 ])
 
 # Encode AQI Impact as a classification target
@@ -90,7 +90,7 @@ with open("model_roi.pkl", "rb") as f:
 test_business = pd.DataFrame([[
     "Green Logistics", "Transportation", "Growth", "Urban logistics", "Subscription", 20, 60
 ]], columns=["Business Name", "Industry Type", "Stage of Development", "Target Market", 
-             "Revenue Model", "Profit Margin", "Valuation (lakh)"])
+             "Revenue Model", "Profit Margin", "Valuation"])
 
 # Drop Business Name for prediction
 test_business = test_business.drop(columns=["Business Name"])

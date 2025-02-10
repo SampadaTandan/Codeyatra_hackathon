@@ -21,7 +21,7 @@ valuation = float(input("Valuation (in Lakh, between 10-100): "))
 user_data = pd.DataFrame([[
     industry_type, stage_of_development, target_market, revenue_model, profit_margin, valuation
 ]], columns=["Industry Type", "Stage of Development", "Target Market", 
-             "Revenue Model", "Profit Margin", "Valuation (lakh)"])
+             "Revenue Model", "Profit Margin", "Valuation"])
 
 # Predict AQI category
 predicted_aqi = loaded_clf_aqi.predict(user_data)

@@ -72,8 +72,6 @@ const Signup = () => {
               </div>
             </div>
 
-        
-
             <div>
               <label
                 htmlFor="phone"
@@ -137,16 +135,15 @@ const Signup = () => {
             </div>
 
             <div>
-  <Link to="/form">
-    <button
-      type="submit"
-      class="flex w-full justify-center rounded-md bg-[#0062B6] px-3 py-2 text-md font-semibold text-white shadow-sm hover:bg-[#004C8C] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 font-poppins"
-    >
-      Sign Up
-    </button>
-  </Link>
-</div>
-
+              <Link to="/form">
+                <button
+                  type="submit"
+                  class="flex w-full justify-center rounded-md bg-[#0062B6] px-3 py-2 text-md font-semibold text-white shadow-sm hover:bg-[#004C8C] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 font-poppins"
+                >
+                  Sign Up
+                </button>
+              </Link>
+            </div>
           </form>
 
           <p className="mt-6 text-center text-sm text-gray-500 font-poppins">
