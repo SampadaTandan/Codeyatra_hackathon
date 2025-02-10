@@ -110,12 +110,12 @@ const navigate=useNavigate()
                         <div className="bg-gray-50 p-4 rounded-md border-2 border-gray-200">
                           <div className="flex justify-between text-gray-800 text-sm">
                             <span>1 month</span>
-                            <span>Rs.999</span>
+                            <span>Rs.1999</span>
                           </div>
                           <div className="border-t border-gray-300 mt-4 pt-4 text-lg font-bold">
                             <div className="flex justify-between">
                               <span>Total</span>
-                              <span>Rs.999</span>
+                              <span>Rs.1999</span>
                             </div>
                           </div>
                         </div>

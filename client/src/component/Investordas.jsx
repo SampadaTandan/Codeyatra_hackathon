@@ -6,40 +6,60 @@ const products = [
     name: 'GreenTech Solutions',
     imageSrc: '../../src/assets/images/4.png',
     description: 'A startup using AI to optimize energy consumption in industrial operations, reducing carbon footprints and providing cost savings while promoting sustainability.',
-    date: '2025-02-10',
     category: 'Tech',
+    investorName: 'John Doe',
+    date: '2025-02-10',
+    ROI: '15%',
+    AQI: 'Low',
+    otherDetails: 'Investing in green technologies for a sustainable future.',
   },
   {
     id: 2,
     name: 'Urban Farming Network',
     imageSrc: '../../src/assets/images/5.png',
-    description: 'An initiative to create vertical farming systems in urban spaces, transforming underutilized buildings into sustainable food production hubs. The project aims to reduce food miles, lower greenhouse gas emissions, and provide fresh produce to local communities.',
-    date: '2025-02-09',
+    description: 'An initiative to create vertical farming systems in urban spaces, transforming underutilized buildings into sustainable food production hubs.',
     category: 'Sustainability',
+    investorName: 'Jane Smith',
+    date: '2025-02-09',
+    ROI: '12%',
+    AQI: 'Moderate',
+    otherDetails: 'Revolutionizing the future of urban food systems.',
   },
   {
     id: 3,
     name: 'Smart Waste Management',
     imageSrc: '../../src/assets/images/6.png',
-    description: 'A tech-driven solution that uses AI and IoT sensors to optimize waste collection and recycling processes. The system improves waste diversion rates, reduces landfill waste, and helps cities become more eco-friendly by managing waste more effectively.',
-    date: '2025-02-08',
+    description: 'A tech-driven solution that uses AI and IoT sensors to optimize waste collection and recycling processes.',
     category: 'Sustainability',
+    investorName: 'Michael Lee',
+    date: '2025-02-08',
+    ROI: '20%',
+    AQI: 'Good',
+    otherDetails: 'Turning waste management into a smart solution.',
   },
   {
     id: 4,
     name: 'Eco-Friendly Packaging',
     imageSrc: '../../src/assets/images/7.png',
-    description: 'A company providing sustainable, biodegradable packaging alternatives to replace single-use plastics. This startup aims to reduce environmental pollution and cater to businesses looking to switch to eco-friendly packaging solutions.',
-    date: '2025-02-08',
+    description: 'A company providing sustainable, biodegradable packaging alternatives to replace single-use plastics.',
     category: 'Tech',
+    investorName: 'Sarah Williams',
+    date: '2025-02-08',
+    ROI: '10%',
+    AQI: 'Good',
+    otherDetails: 'Helping businesses switch to eco-friendly packaging.',
   },
   {
     id: 5,
     name: 'AI Health Monitoring Wearables',
     imageSrc: '../../src/assets/images/8.png',
-    description: 'A wearable technology startup focused on developing advanced health monitoring devices powered by AI. These wearables track various health metrics and use predictive analytics to provide early warnings for potential health issues, helping individuals take preventive measures.',
-    date: '2025-02-08',
+    description: 'A wearable technology startup focused on developing advanced health monitoring devices powered by AI.',
     category: 'Health',
+    investorName: 'David Brown',
+    date: '2025-02-08',
+    ROI: '18%',
+    AQI: 'Moderate',
+    otherDetails: 'AI-powered health monitoring for the future.',
   },
 ];
 
@@ -51,8 +71,15 @@ const CartItem = ({ product }) => (
       </div>
       <div className="flex flex-col gap-4">
         <div>
-          <h3 className="text-sm sm:text-base font-bold text-gray-800">{product.name}</h3>
+          <h3 className="text-md sm:text-base font-bold text-gray-800">{product.name}</h3>
           <p className="text-sm font-semibold text-gray-500 mt-2">{product.description}</p>
+        </div>
+        {/* Investor Name, ROI, AQI and Other Details */}
+        <div className="mt-4 text-gray-700">
+          <p><strong>Investor Name:</strong> {product.investorName}</p>
+          <p><strong>ROI:</strong> {product.ROI}</p>
+          <p><strong>AQI:</strong> {product.AQI}</p>
+          <p><strong>Details:</strong> {product.otherDetails}</p>
         </div>
       </div>
     </div>

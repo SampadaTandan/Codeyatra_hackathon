@@ -13,6 +13,7 @@ import { AuthContext } from "../component/AuthContext";
 import Investordas from "../component/Investordas";
 import Isubs from "../component/Isubs";
 import Icheckout from "../component/Icheckout";
+import Profile from "../frontpage/Profile";
 
 const routes = [
   {
@@ -74,6 +75,10 @@ const routes = [
       {
         path: "/icheckout",
         element: <Icheckout/>,
+      },
+      {
+        path: "/profile",
+        element: <Profile/>,
       },
     ],
   },
