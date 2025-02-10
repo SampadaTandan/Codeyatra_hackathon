@@ -1,14 +1,52 @@
-import React from "react";
+// import React from 'react';
+// import { Link, useNavigate } from 'react-router-dom';
+
+// const Login = () => {
+//   const navigate = useNavigate();
+
+//   const handleLogin = (e) => {
+//     e.preventDefault(); // Prevent page reload
+//     localStorage.setItem("isLoggedIn", "true");
+//     navigate("/");  // Redirect to homepage
+//     window.location.reload(); // Force reload to update Navbar
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const navigate = useNavigate();
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
 
-  const handleLogin = (e) => {
-    e.preventDefault(); // Prevent page reload
-    localStorage.setItem("isLoggedIn", "true");
-    navigate("/"); // Redirect to homepage
-    window.location.reload(); // Force reload to update Navbar
+  // Handle input changes
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  // Handle form submission
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch("http://localhost:5000/api/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        alert("Login successful!");
+        navigate("/home"); // Redirect to Home page after successful login
+      } else {
+        alert(data.error || "Login failed");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Something went wrong!");
+    }
   };
 
   return (
@@ -21,7 +59,7 @@ const Login = () => {
         </div>
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-          <form onSubmit={handleLogin} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-6">
             <div>
               <label
                 htmlFor="email"
