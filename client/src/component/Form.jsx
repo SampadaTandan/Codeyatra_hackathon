@@ -1,10 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import backgroundImage from '../assets/images/background.png'; // Adjust path as needed
+
 
 const Form = () => {
   return (
     <>
-      <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
+    
+    <div
+//   style={{
+//     backgroundImage: `url(${backgroundImage})`,
+//     backgroundRepeat: "no-repeat",
+//     backgroundSize: "cover",
+//   }}
+  className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8"
+>
+        
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
         <h2 className="mt-10 text-center text-4xl font-medium tracking-tight text-gray-900 font-poppins">
           Sign Up
@@ -204,14 +215,16 @@ const Form = () => {
 
 
 
-            <div>
-              <button
-                type="submit"
-                className="flex w-full justify-center rounded-md bg-[#0062B6] px-3 py-2 text-md font-semibold text-white shadow-sm hover:bg-[#004C8C] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 font-poppins"
-              >
-                Submit
-              </button>
-            </div>
+<div>
+  <Link to="/subs"> {/* Replace with your actual route */}
+    <button
+      type="button"
+      className="flex w-full justify-center rounded-md bg-[#0062B6] px-3 py-2 text-md font-semibold text-white shadow-sm hover:bg-[#004C8C] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 font-poppins"
+    >
+      Submit
+    </button>
+  </Link>
+</div>
           </form>
 
           
