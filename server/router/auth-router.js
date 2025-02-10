@@ -1,15 +1,19 @@
 const express = require("express");
-const router = express.Router();
-const authControllers = require("../controllers/auth-controller");
-const validate = require("../middlewares/validate-middleware");
-const { signupSchema, loginSchema } = require("../validators/auth-validator");
-const authMiddleware = require("../middlewares/auth-middleware");
+const { signup, login } = require("../controllers/auth-controller");
+const {
+  createBusiness,
+  getBusinesses,
+} = require("../controllers/business-controller");
+const { validateBusinessData } = require("../middlewares/business-middleware");
 
-router.route("/").get(authControllers.home);
-router
-  .route("/register")
-  .post(validate(signupSchema), authControllers.register);
-router.route("/login").post(validate(loginSchema), authControllers.login);
-router.route("/user").get(authMiddleware, authControllers.user);
+const router = express.Router();
+
+// Signup route
+router.post("/signup", signup);
+
+// Login route
+router.post("/login", login);
+router.post("/business", validateBusinessData, createBusiness);
+// router.get('/business', getBusinesses);
 
 module.exports = router;

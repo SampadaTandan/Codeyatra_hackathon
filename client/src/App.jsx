@@ -1,12 +1,7 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Navbar from './frontpage/Navbar';
-
+import React from "react";
 
 function App() {
-  return (
-   <></>
-  );
+  return <></>;
 }
 
 export default App;
