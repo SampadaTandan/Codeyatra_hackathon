@@ -27,7 +27,6 @@ const Login = () => {
   // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
       const response = await fetch("http://localhost:5000/api/auth/login", {
         method: "POST",
@@ -36,7 +35,7 @@ const Login = () => {
       });
 
       const data = await response.json();
-
+      console.log(data);
       if (response.ok) {
         alert("Login successful!");
         navigate("/home"); // Redirect to Home page after successful login
@@ -113,7 +112,7 @@ const Login = () => {
           </form>
 
           <p className="mt-6 text-center text-sm text-gray-500 font-poppins">
-            Don't have an account?{" "}
+            Don&apos;t have an account?{" "}
             <Link
               to="/signup"
               className="font-semibold text-[#0062B6] hover:text-[#004C8C]"
