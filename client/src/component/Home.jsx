@@ -1,8 +1,10 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import logo from "../assets/images/logo3.png"
 import people from "../assets/images/people.png"
 import Background from "../assets/images/background.png"
 import bg3 from "../assets/images/bg3.png"
+import pic from "../assets/images/2.png"
 
 const Home = () => {
   return (
@@ -18,18 +20,21 @@ const Home = () => {
       }}
     >
       <div className="max-w-screen-xl mx-auto text-center text-balance">
-        <h1 className="text-gray-900 text-5xl max-sm:text-3xl font-extrabold leading-tight mb-6">
-          Welcome to Ecovest
+        <h1 className="text-[#0062B6] text-5xl max-sm:text-3xl font-extrabold leading-tight mb-6">
+        Connecting Innovators with Investors 
         </h1>
         <p className="text-gray-900 text-lg mb-12">
-          Experience excellence like never before with our exclusive products and services.
+        Discover a platform where entrepreneurs and investors meet, collaborate, and transform ideas into reality. Use cutting-edge AI to extract key insights and make informed investment decisions based on ROI and environmental impact.
         </p>
-        <button
-          type="button"
-          className="bg-[#0062B6] text-white text-lg tracking-wide px-8 py-2.5 rounded-full hover:bg-[#004C8C] transition-all duration-300"
-        >
-          Get Started
-        </button>
+        
+        <Link to="/select">
+  <button
+    type="button"
+    className="bg-[#0062B6] text-white text-lg tracking-wide px-8 py-2.5 rounded-full hover:bg-[#004C8C] transition-all duration-300"
+  >
+    Connect Now
+  </button>
+</Link>
       </div>
     </div>
 
@@ -38,57 +43,66 @@ const Home = () => {
       <div class="grid md:grid-cols-2 items-center md:gap-10 gap-6">
         <div class="max-md:order-1 max-md:text-center">
           {/* <p class="mt-4 text-sm font-bold text-blue-600"><span class="rotate-90 inline-block mr-2 mb-2">|</span> ALL IN ONE MEETING SCHEDULER</p> */}
-          <h2 class="text-gray-800 md:text-5xl text-3xl font-extrabold mb-4 md:!leading-[55px]">Schedule meetings effortlessly</h2>
-          <p class="mt-5 text-base text-gray-500 leading-relaxed">Embark on a gastronomic journey with our curated dishes, delivered promptly to your doorstep. Elevate your dining experience today.</p>
+          <h2 class="text-gray-800 md:text-5xl text-3xl font-extrabold mb-4 md:!leading-[55px]">Why Choose Our Platform?</h2>
+          <p class="mt-5 text-base text-gray-500 leading-relaxed">Entrepreneurs, get your business in front of investors who care about ROI and sustainability. Investors, discover new opportunities with the help of our AI-powered platform. We simplify decision-making by providing key insights and data that matter, empowering you to make smarter, faster investment choices.</p>
 
-          <div class="mt-10 flex px-4 py-4 rounded-lg bg-gray-100 overflow-hidden">
+          {/* <div class="mt-10 flex px-4 py-4 rounded-lg bg-gray-100 overflow-hidden">
             <input type='email' placeholder='Search Something...' class="w-full outline-none bg-transparent text-sm" />
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192.904 192.904" width="20px" class="cursor-pointer fill-gray-400">
               <path d="m190.707 180.101-47.078-47.077c11.702-14.072 18.752-32.142 18.752-51.831C162.381 36.423 125.959 0 81.191 0 36.422 0 0 36.423 0 81.193c0 44.767 36.422 81.187 81.191 81.187 19.688 0 37.759-7.049 51.831-18.751l47.079 47.078a7.474 7.474 0 0 0 5.303 2.197 7.498 7.498 0 0 0 5.303-12.803zM15 81.193C15 44.694 44.693 15 81.191 15c36.497 0 66.189 29.694 66.189 66.193 0 36.496-29.692 66.187-66.189 66.187C44.693 147.38 15 117.689 15 81.193z"></path>
             </svg>
-          </div>
+          </div> */}
         </div>
 
         <div class="md:h-[400px] p-2">
-          <img src="https://readymadeui.com/management-img.webp" class="w-full h-full object-contain rounded-lg" alt="Dining Experience" />
+          <img src={pic} class="w-full h-full object-contain rounded-lg ml-40" alt="Dining Experience" />
         </div>
       </div>
 
-      <div class="mt-10 grid grid-cols-2 md:grid-cols-4 gap-4 items-center">
+      {/* <div class="mt-10 grid grid-cols-2 md:grid-cols-4 gap-4 items-center">
         <img src="https://readymadeui.com/google-logo.svg" class="w-28 mx-auto" alt="google-logo" />
         <img src="https://readymadeui.com/facebook-logo.svg" class="w-28 mx-auto" alt="facebook-logo" />
         <img src="https://readymadeui.com/linkedin-logo.svg" class="w-28 mx-auto" alt="linkedin-logo" />
         <img src="https://readymadeui.com/pinterest-logo.svg" class="w-28 mx-auto" alt="pinterest-logo" />
-      </div>
+      </div> */}
     </div>
 
-    <div class="bg-gray-100 py-16 ">
-      <div class="max-w-6xl mx-auto flex flex-col lg:flex-row items-center justify-center gap-12 p-4">
-        <div class="w-full text-center lg:text-left">
-          <h2 class="text-gray-800 text-5xl font-extrabold mb-6">Stay Updated</h2>
-          <p class="text-lg text-gray-600">Subscribe to our newsletter for the latest updates, tips, and exclusive offers.</p>
-        </div>
-
-        <div class="w-full max-lg:max-w-lg">
-          <form class="flex items-center ml-96">
-          <img src={people} alt="people" class='w-38' />
-          </form>
-        </div>
-      </div>
+    <div className="bg-gray-100 py-16">
+  <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center justify-center gap-96 p-4">
+    
+    <div className="w-full max-lg:max-w-lg flex justify-center lg:justify-start">
+      <img src={people} alt="people" className="w-[300px] lg:ml-10" />
     </div>
+
+    <div className="w-full text-center lg:text-left">
+      <h2 className="text-gray-800 text-5xl font-extrabold mb-6">Stay Updated</h2>
+      <p className="text-lg text-gray-600">
+        Subscribe to our newsletter for the latest updates on new businesses, 
+        investment trends, and AI-driven insights. Stay informed on innovation, 
+        sustainability, and investment opportunities.
+      </p>
+      <Link to="/select">
+        <button
+          type="button"
+          className="mt-12 bg-transparent text-gray text-base py-3 px-6 border border-black rounded-lg hover:bg-white hover:text-black transition duration-300">
+          Subscribe Now
+        </button>
+      </Link>
+    </div>
+
+  </div>
+</div>
+
+
 
     <div class="relative  before:absolute before:w-full ">
       <img src={bg3} alt="Banner Image" class="absolute inset-0 w-full h-full object-cover" />
 
-      <div class="min-h-[350px] relative z-50 h-full max-w-6xl mx-auto flex flex-col justify-center items-center text-center text-gray p-6">
-        <h2 class="sm:text-4xl text-2xl font-bold mb-6">Explore the World</h2>
-        <p class="sm:text-lg text-base text-center text-gray">Embark on unforgettable journeys. Book your dream vacation today!</p>
+      <div class="min-h-[350px] relative z-50 h-full max-w-6xl mx-auto  flex flex-col justify-center items-center text-center text-gray-800  p-6">
+        <h2 class="sm:text-5xl text-2xl font-bold mb-6">About Us</h2>
+        <p class="sm:text-lg text-base text-center text-gray">We’re creating a platform that connects visionary entrepreneurs with forward-thinking investors. Using AI, we analyze business descriptions, calculate ROI, and assess environmental impact via the Air Quality Index, helping investors make informed decisions that drive innovation and sustainability.</p>
 
-        <button
-          type="button"
-          class="mt-12 bg-transparent text-gray text-base py-3 px-6 border border-black rounded-lg hover:bg-white hover:text-black transition duration-300">
-          Book Now
-        </button>
+        
       </div>
     </div>
 
@@ -100,7 +114,7 @@ const Home = () => {
             <img src={logo} alt="logo" class='w-36' />
           </a>
           <div class="mt-6">
-            <p class="text-gray-600 leading-relaxed text-sm">ReadymadeUI is a library of pre-designed UI components built for Tailwind CSS. It offers a collection of versatile, ready-to-use components that streamline the development process by providing a wide range of UI elements.</p>
+            <p class="text-gray-600 leading-relaxed text-sm">Whether you're an entrepreneur seeking investment or an investor looking for new opportunities, our platform is here to help you grow and thrive. Join today to start making impactful connections.</p>
           </div>
           <ul class="mt-10 flex space-x-5">
             <li>
@@ -118,7 +132,7 @@ const Home = () => {
                 </svg>
               </a>
             </li>
-            <li>
+            {/* <li>
               <a href='javascript:void(0)'>
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 152 152">
                   <linearGradient id="a" x1="22.26" x2="129.74" y1="22.26" y2="129.74" gradientUnits="userSpaceOnUse">
@@ -140,7 +154,7 @@ const Home = () => {
                   </g>
                 </svg>
               </a>
-            </li>
+            </li> */}
             <li>
               <a href='javascript:void(0)'>
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 1227 1227">
@@ -157,19 +171,19 @@ const Home = () => {
 
           <ul class="mt-6 space-y-4">
             <li>
-              <a href='javascript:void(0)' class='hover:text-gray-800 text-gray-600 text-sm'>Web Development</a>
+              <a href='javascript:void(0)' class='hover:text-gray-800 text-gray-600 text-sm'>Business Analysis</a>
             </li>
             <li>
-              <a href='javascript:void(0)' class='hover:text-gray-800 text-gray-600 text-sm'>Pricing</a>
+              <a href='javascript:void(0)' class='hover:text-gray-800 text-gray-600 text-sm'>Investment Opportunities</a>
             </li>
             <li>
-              <a href='javascript:void(0)' class='hover:text-gray-800 text-gray-600 text-sm'>Support</a>
+              <a href='javascript:void(0)' class='hover:text-gray-800 text-gray-600 text-sm'>AI Insights</a>
             </li>
             <li>
-              <a href='javascript:void(0)' class='hover:text-gray-800 text-gray-600 text-sm'>Client Portal</a>
+              <a href='javascript:void(0)' class='hover:text-gray-800 text-gray-600 text-sm'>Startup Support</a>
             </li>
             <li>
-              <a href='javascript:void(0)' class='hover:text-gray-800 text-gray-600 text-sm'>Resources</a>
+              <a href='javascript:void(0)' class='hover:text-gray-800 text-gray-600 text-sm'>Environmental Impact Analysis</a>
             </li>
           </ul>
         </div>
@@ -178,16 +192,16 @@ const Home = () => {
           <h4 class="text-gray-800 font-semibold text-base relative max-sm:cursor-pointer">Platforms</h4>
           <ul class="space-y-4 mt-6">
             <li>
-              <a href='javascript:void(0)' class='hover:text-gray-800 text-gray-600 text-sm'>Hubspot</a>
+              <a href='javascript:void(0)' class='hover:text-gray-800 text-gray-600 text-sm'>AI-Powered Business Evaluation</a>
             </li>
             <li>
-              <a href='javascript:void(0)' class='hover:text-gray-800 text-gray-600 text-sm'>Integration Services</a>
+              <a href='javascript:void(0)' class='hover:text-gray-800 text-gray-600 text-sm'>ROI Calculation Tools</a>
             </li>
             <li>
-              <a href='javascript:void(0)' class='hover:text-gray-800 text-gray-600 text-sm'>Marketing Glossar</a>
+              <a href='javascript:void(0)' class='hover:text-gray-800 text-gray-600 text-sm'>Air Quality Impact Measurement</a>
             </li>
             <li>
-              <a href='javascript:void(0)' class='hover:text-gray-800 text-gray-600 text-sm'>UIPath</a>
+              <a href='javascript:void(0)' class='hover:text-gray-800 text-gray-600 text-sm'>Entrepreneur Profiles</a>
             </li>
           </ul>
         </div>
@@ -206,10 +220,10 @@ const Home = () => {
               <a href='javascript:void(0)' class='hover:text-gray-800 text-gray-600 text-sm'>Blog</a>
             </li>
             <li>
-              <a href='javascript:void(0)' class='hover:text-gray-800 text-gray-600 text-sm'>Portfolio</a>
+              <a href='javascript:void(0)' class='hover:text-gray-800 text-gray-600 text-sm'>Partner with Us</a>
             </li>
             <li>
-              <a href='javascript:void(0)' class='hover:text-gray-800 text-gray-600 text-sm'>Events</a>
+              <a href='javascript:void(0)' class='hover:text-gray-800 text-gray-600 text-sm'>Testimonials</a>
             </li>
           </ul>
         </div>
@@ -222,16 +236,16 @@ const Home = () => {
               <a href='javascript:void(0)' class='hover:text-gray-800 text-gray-600 text-sm'>FAQ</a>
             </li>
             <li>
-              <a href='javascript:void(0)' class='hover:text-gray-800 text-gray-600 text-sm'>Partners</a>
+              <a href='javascript:void(0)' class='hover:text-gray-800 text-gray-600 text-sm'>Contact Us</a>
             </li>
             <li>
-              <a href='javascript:void(0)' class='hover:text-gray-800 text-gray-600 text-sm'>Sitemap</a>
+              <a href='javascript:void(0)' class='hover:text-gray-800 text-gray-600 text-sm'>Investor Resources</a>
             </li>
             <li>
               <a href='javascript:void(0)' class='hover:text-gray-800 text-gray-600 text-sm'>Contact</a>
             </li>
             <li>
-              <a href='javascript:void(0)' class='hover:text-gray-800 text-gray-600 text-sm'>News</a>
+              <a href='javascript:void(0)' class='hover:text-gray-800 text-gray-600 text-sm'>Legal & Compliance</a>
             </li>
           </ul>
         </div>
@@ -252,7 +266,7 @@ const Home = () => {
           </li>
         </ul>
 
-        <p class='text-gray-600 text-sm md:ml-auto'>© ReadymadeUI. All rights reserved.</p>
+        <p class='text-gray-600 text-sm md:ml-auto'>© Ecovest. All rights reserved.</p>
       </div>
     </footer>
     </div>

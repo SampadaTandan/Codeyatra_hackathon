@@ -1,3 +1,14 @@
+// import React from 'react';
+// import { Link, useNavigate } from 'react-router-dom';
+
+// const Login = () => {
+//   const navigate = useNavigate();
+
+//   const handleLogin = (e) => {
+//     e.preventDefault(); // Prevent page reload
+//     localStorage.setItem("isLoggedIn", "true");
+//     navigate("/");  // Redirect to homepage
+//     window.location.reload(); // Force reload to update Navbar
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -42,19 +53,18 @@ const Login = () => {
     <>
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-          <h2 className="mt-10 text-center text-4xl font-medium tracking-tight text-gray-900 font-poppins">
-            Log In
+          <h2 className="mt-10 text-center text-4xl font-bold tracking-tight text-[#0062B6] font-poppins">
+            Log In 
+
           </h2>
         </div>
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleLogin} className="space-y-6">
             <div>
-              <label
-                htmlFor="email"
-                className="block text-md font-medium text-gray-800 font-poppins"
-              >
-                Email address
+              <label htmlFor="email" className="block text-md font-medium text-gray-800 font-poppins">
+                Email Address
+
               </label>
               <div className="mt-2">
                 <input

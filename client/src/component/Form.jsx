@@ -1,5 +1,11 @@
-import React, { useState } from "react";
+
+import React from 'react';
+import { Link } from 'react-router-dom';
+import backgroundImage from '../assets/images/background.png'; // Adjust path as needed
+
+import  { useState } from "react";
 import axios from "axios";
+
 
 const Form = () => {
   const [formData, setFormData] = useState({
@@ -44,11 +50,13 @@ const Form = () => {
         </div>
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-4xl">
+
           <form
             onSubmit={handleSubmit}
             method="POST"
             className="grid grid-cols-1 md:grid-cols-2 gap-6"
           >
+
             <div>
               <label
                 htmlFor="businessName"
@@ -62,6 +70,7 @@ const Form = () => {
                   name="businessName"
                   type="text"
                   required
+
                   value={formData.businessName}
                   onChange={handleChange}
                   className="block w-full rounded-md bg-white px-4 py-2 text-lg text-gray-400 outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-indigo-600 sm:text-lg font-sans"
@@ -70,6 +79,7 @@ const Form = () => {
             </div>
 
             <div>
+
               <label
                 htmlFor="industryType"
                 className="block text-md font-medium text-gray-800 font-poppins"
@@ -78,6 +88,7 @@ const Form = () => {
               </label>
               <div className="mt-2">
                 <select
+
                   id="industryType"
                   name="industryType"
                   required
@@ -105,6 +116,7 @@ const Form = () => {
             </div>
 
             <div className="md:col-span-2">
+
               <label
                 htmlFor="businessDescription"
                 className="block text-md font-medium text-gray-800 font-poppins"
@@ -176,7 +188,9 @@ const Form = () => {
               </div>
             </div>
 
+
             <div>
+
               <label
                 htmlFor="stageOfDevelopment"
                 className="block text-md font-medium text-gray-800 font-poppins"
@@ -198,9 +212,9 @@ const Form = () => {
                   <option value="Growth">Growth</option>
                   <option value="Early">Early</option>
                   <option value="Expansion">Expansion</option>
-                  <option value="Scaling">Scaling</option>
-                  <option value="Established">Established</option>
-                  <option value="Mature">Mature</option>
+                   <option value="Scaling">Scaling</option>
+                   <option value="Established">Established</option>
+                   <option value="Mature">Mature</option>
                 </select>
               </div>
             </div>
@@ -240,6 +254,7 @@ const Form = () => {
             </div>
 
             <div>
+
               <label
                 htmlFor="revenueModel"
                 className="block text-md font-medium text-gray-800 font-poppins"
@@ -272,6 +287,7 @@ const Form = () => {
             </div>
 
             <div>
+
               <label
                 htmlFor="profitMargin"
                 className="block text-md font-medium text-gray-800 font-poppins"
