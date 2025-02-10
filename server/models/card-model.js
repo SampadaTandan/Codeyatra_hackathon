@@ -14,6 +14,6 @@ const businessSchema = new Schema({
   bulletPoints: { type: [String], required: true },
 });
 
-const Business = model("Business", businessSchema);
+const Business = model("business", businessSchema);
 
 module.exports = Business;

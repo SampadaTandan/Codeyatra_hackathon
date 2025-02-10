@@ -1,112 +1,158 @@
-import React, { useState } from 'react';
-
-const products = [
-  {
-    id: 1,
-    name: 'GreenTech Solutions',
-    imageSrc: '../../src/assets/images/4.png',
-    description: 'A startup using AI to optimize energy consumption in industrial operations, reducing carbon footprints and providing cost savings while promoting sustainability.',
-    category: 'Tech',
-    investorName: 'John Doe',
-    date: '2025-02-10',
-    ROI: '15%',
-    AQI: 'Low',
-    otherDetails: 'Investing in green technologies for a sustainable future.',
-  },
-  {
-    id: 2,
-    name: 'Urban Farming Network',
-    imageSrc: '../../src/assets/images/5.png',
-    description: 'An initiative to create vertical farming systems in urban spaces, transforming underutilized buildings into sustainable food production hubs.',
-    category: 'Sustainability',
-    investorName: 'Jane Smith',
-    date: '2025-02-09',
-    ROI: '12%',
-    AQI: 'Moderate',
-    otherDetails: 'Revolutionizing the future of urban food systems.',
-  },
-  {
-    id: 3,
-    name: 'Smart Waste Management',
-    imageSrc: '../../src/assets/images/6.png',
-    description: 'A tech-driven solution that uses AI and IoT sensors to optimize waste collection and recycling processes.',
-    category: 'Sustainability',
-    investorName: 'Michael Lee',
-    date: '2025-02-08',
-    ROI: '20%',
-    AQI: 'Good',
-    otherDetails: 'Turning waste management into a smart solution.',
-  },
-  {
-    id: 4,
-    name: 'Eco-Friendly Packaging',
-    imageSrc: '../../src/assets/images/7.png',
-    description: 'A company providing sustainable, biodegradable packaging alternatives to replace single-use plastics.',
-    category: 'Tech',
-    investorName: 'Sarah Williams',
-    date: '2025-02-08',
-    ROI: '10%',
-    AQI: 'Good',
-    otherDetails: 'Helping businesses switch to eco-friendly packaging.',
-  },
-  {
-    id: 5,
-    name: 'AI Health Monitoring Wearables',
-    imageSrc: '../../src/assets/images/8.png',
-    description: 'A wearable technology startup focused on developing advanced health monitoring devices powered by AI.',
-    category: 'Health',
-    investorName: 'David Brown',
-    date: '2025-02-08',
-    ROI: '18%',
-    AQI: 'Moderate',
-    otherDetails: 'AI-powered health monitoring for the future.',
-  },
-];
-
-const CartItem = ({ product }) => (
-  <div className="flex gap-12 bg-white px-4 py-6 rounded-lg border border-gray-200 shadow-[0_2px_12px_-3px_rgba(61,63,68,0.3)] mb-4 ml-4 mr-4">
-    <div className="flex gap-4">
-      <div className="w-28 h-28 max-sm:w-24 max-sm:h-24 shrink-0">
-        <img src={product.imageSrc} className="w-full h-full object-contain" alt={product.name} />
-      </div>
-      <div className="flex flex-col gap-4">
-        <div>
-          <h3 className="text-md sm:text-base font-bold text-gray-800">{product.name}</h3>
-          <p className="text-sm font-semibold text-gray-500 mt-2">{product.description}</p>
-        </div>
-        {/* Investor Name, ROI, AQI and Other Details */}
-        <div className="mt-4 text-gray-700">
-          <p><strong>Investor Name:</strong> {product.investorName}</p>
-          <p><strong>ROI:</strong> {product.ROI}</p>
-          <p><strong>AQI:</strong> {product.AQI}</p>
-          <p><strong>Details:</strong> {product.otherDetails}</p>
-        </div>
-      </div>
-    </div>
-    <div className="ml-auto flex flex-col">
-      <div className="flex items-start gap-4 justify-end">
-        <p className="text-sm font-semibold text-gray-900 mt-2 whitespace-nowrap">Date: {product.date}</p>
-      </div>
-    </div>
-  </div>
-);
+import React, { useState, useEffect } from "react";
 
 const Investordas = () => {
   const [categoryFilter, setCategoryFilter] = useState("All");
   const [otherFilter, setOtherFilter] = useState("All");
+  const [businesses, setBusinesses] = useState([]);
 
-  // Filter products based on selected category filter
-  const filteredProducts = products.filter((product) => {
+  // Assuming curElem fetches data from a database or API
+  useEffect(() => {
+    // Mocking a database/API fetch with an example structure
+    const fetchedBusinesses = [
+      {
+        businessName: "GreenTech Energy",
+        category: "Renewable Energy",
+        imageSrc: "../../src/assets/images/1.png",
+        ROI: 25,
+        AQI: "High",
+        bulletPoints: [
+          "GreenTech Energy is a pioneering company dedicated to providing cutting-edge renewable energy solutions",
+          "The company specializes in solar panels and advanced battery systems for energy storage",
+          "GreenTech Energy was founded in 2007 and has offices in New York, Washington, and Los Angeles.",
+        ],
+      },
+      {
+        businessName: "Urban Mobility",
+        category: "Transportation",
+        imageSrc: "../../src/assets/images/4.png",
+        ROI: 15,
+        AQI: "High",
+        bulletPoints: [
+          "Urban Mobility is revolutionizing urban transportation by offering electric scooter rentals to city commuters",
+          "Urban Mobility is a subsidiary of Urban Mobility, which is based in New York City",
+          "The company's scooter rental service is called Urban Mobility Scooter Rides.",
+        ],
+      },
+      {
+        businessName: "EcoFarms",
+        category: "Agriculture",
+        imageSrc: "../../src/assets/images/5.png",
+        ROI: 18,
+        AQI: "High",
+        bulletPoints: [
+          "EcoFarms is at the forefront of transforming the agriculture industry",
+          "EcoFarms promotes organic farming practices that are not only sustainable but also highly productive",
+          "For more information, visit www.ecofarms.com or visit the company's Facebook page.",
+        ],
+      },
+      {
+        businessName: "AI FinTech",
+        category: "Financial Services",
+        imageSrc: "../../src/assets/images/6.png",
+        ROI: 22,
+        AQI: "Medium",
+        bulletPoints: [
+          "AI FinTech is an innovative financial technology company that leverages artificial intelligence to offer intelligent, data-driven trading solutions",
+          "The company is based in New York and has offices in London and San Francisco",
+          "For more information, visit: www.aifintech.com.",
+        ],
+      },
+      {
+        businessName: "Waste2Wealth",
+        category: "Waste Management",
+        imageSrc: "../../src/assets/images/7.png",
+        ROI: 10,
+        AQI: "High",
+        bulletPoints: [
+          "Waste2Wealth is revolutionizing the waste management industry",
+          "It offers innovative solutions that convert waste into valuable resources",
+          "The company is based in New York City and has offices in London and Paris",
+          "For more information, visit waste2wealth.com.",
+        ],
+      },
+      {
+        businessName: "AutoRevive",
+        category: "Automotive",
+        imageSrc: "../../src/assets/images/8.png",
+        ROI: 20,
+        AQI: "Medium",
+        bulletPoints: [
+          "AutoRevive is a forward-thinking company that specializes in providing high-quality parts and components to the electric vehicle (EV) industry",
+          "AutoRevive provides parts and parts components for electric vehicles",
+          "The company is based in San Francisco, California.",
+        ],
+      },
+      {
+        businessName: "TextilePro",
+        category: "Manufacturing",
+        imageSrc: "../../src/assets/images/9.png",
+        ROI: 17,
+        AQI: "High",
+        bulletPoints: [
+          "TextilePro is a leading manufacturer of sustainable fabrics designed for the fashion industry",
+          "TextilePro's fabrics are made from sustainable materials such as cotton, silk and polyester",
+          "The company's fabrics can be found in stores across the U.S and Europe.",
+        ],
+      },
+      {
+        businessName: "CarbonCut",
+        category: "Industrial Solutions",
+        imageSrc: "../../src/assets/images/10.png",
+        ROI: 12,
+        AQI: "Medium",
+        bulletPoints: [
+          "CarbonCut is a company at the forefront of developing and providing innovative carbon capture technologies",
+          "The company's technologies are designed to reduce industrial emissions",
+          "CarbonCut is based in San Francisco, California and has offices in London and New York",
+          "For more information on CarbonCut, visit their website.",
+        ],
+      },
+      {
+        businessName: "MegaMines Corp",
+        category: "Mining",
+        imageSrc: "../../src/assets/images/4.png",
+        ROI: 8,
+        AQI: "Low",
+        bulletPoints: [
+          "MegaMines Corp is a prominent player in the mining industry",
+          "The company specializes in the extraction and sale of coal and valuable minerals",
+          "MegaMines is one of the largest coal mining companies in the United States",
+          "It is based in Atlanta, Georgia, and has more than 1,000 employees.",
+        ],
+      },
+      {
+        businessName: "Cloud IT Solutions",
+        category: "Information Technology",
+        imageSrc: "../../src/assets/images/6.png",
+        ROI: 20,
+        AQI: "Medium",
+        bulletPoints: [
+          "Cloud IT Solutions is an IT services provider offering cloud-based solutions that allow businesses to optimize their operations",
+          "Cloud IT Solutions offers secure, scalable, and efficient technology",
+          "For more information, visit www.clouditsolutions.com",
+          "For confidential support call the Samaritans on 08457 90 90 90, visit a local Samaritans branch or click here.",
+        ],
+      },
+    ];
+
+    // Simulating fetching data
+    setBusinesses(fetchedBusinesses);
+  }, []);
+
+  // Filter businesses based on selected category filter
+  const filteredBusinesses = businesses.filter((business) => {
     if (categoryFilter === "All" && otherFilter === "All") {
       return true;
     }
     if (categoryFilter !== "All" && otherFilter === "All") {
-      return product.category === categoryFilter;
+      return business.category === categoryFilter;
     }
     if (categoryFilter === "All" && otherFilter !== "All") {
-      return product.category === otherFilter;
+      return business.category === otherFilter;
     }
-    return product.category === categoryFilter || product.category === otherFilter;
+    return (
+      business.category === categoryFilter || business.category === otherFilter
+    );
   });
 
   return (
@@ -123,7 +169,7 @@ const Investordas = () => {
           <select
             value={otherFilter}
             onChange={(e) => setOtherFilter(e.target.value)}
-            className=" bg-white text-gray-600 py-2 px-6 border-2 border-gray-400 rounded-md hover:border-[#0062B6]"
+            className="bg-white text-gray-600 py-2 px-6 border-2 border-gray-400 rounded-md hover:border-[#0062B6]"
           >
             <option value="All">Filter</option>
             <option value="Sustainability">Sustainability</option>
@@ -133,9 +179,46 @@ const Investordas = () => {
         </div>
       </div>
 
-      {/* Products Section */}
-      {filteredProducts.map((product) => (
-        <CartItem key={product.id} product={product} />
+      {/* Businesses Section */}
+      {filteredBusinesses.map((curElem) => (
+        <div
+          key={curElem.id}
+          className="flex gap-12 bg-white px-4 py-6 rounded-lg border border-gray-200 shadow-[0_2px_12px_-3px_rgba(61,63,68,0.3)] mb-4 ml-4 mr-4"
+        >
+          <div className="flex gap-4">
+            <div className="w-28 h-28 max-sm:w-24 max-sm:h-24 shrink-0">
+              <img
+                src={curElem.imageSrc}
+                className="w-full h-full object-contain"
+                alt={curElem.businessName}
+              />
+            </div>
+            <div className="flex flex-col gap-4">
+              <div>
+                <h3 className="text-md sm:text-base font-bold text-gray-800">
+                  {curElem.businessName}
+                </h3>
+                {/* Display Bullet Points */}
+                <ul className="text-sm font-semibold text-gray-500 mt-2">
+                  {curElem.bulletPoints.map((point, index) => (
+                    <li key={index} className="ml-4">
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              {/* Display ROI, AQI */}
+              <div className="mt-4 text-gray-700">
+                <p>
+                  <strong>ROI:</strong> {curElem.ROI}
+                </p>
+                <p>
+                  <strong>AQI:</strong> {curElem.AQI}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       ))}
     </div>
   );

@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const cards = require("../controllers/card-controller");
+const cardController = require("../controllers/card-controller"); // Import the whole module
 
-router.route("/card").get(cards);
+router.route("/card").get(cardController.cards); // Call the cards function from the imported controller
 module.exports = router;

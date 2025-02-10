@@ -24,7 +24,7 @@ app.use(express.json()); // Middleware to parse JSON data
 // Mount Routers
 app.use("/api/auth", router);
 app.use("/api/business", businessRouter); // Mount the new business router
-app.use("/auth/cd", cardRoute);
+app.use("/api/cd", cardRoute);
 
 // Admin Routes (Includes Analytics)
 // app.use("/api/admin", adminRoute);
