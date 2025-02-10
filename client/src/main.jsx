@@ -24,12 +24,16 @@ import routes from './route/route.jsx';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App.jsx';
+import { AuthProvider } from './component/AuthContext.jsx';  // Import the AuthProvider
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 const router = createBrowserRouter(routes);
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <AuthProvider>
           <App />
+          
           <RouterProvider router={router} />
+          </AuthProvider>
   </React.StrictMode>
 );

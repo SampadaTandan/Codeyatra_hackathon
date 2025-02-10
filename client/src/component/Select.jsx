@@ -7,15 +7,15 @@ function Select() {
   // Determine the target link based on selected option
   let targetLink = '';
   if (selected === 'investor') {
-    targetLink = '/investor-dashboard'; // Redirect to Investor Dashboard
+    targetLink = '/select/isignup'; // Redirect to Investor Dashboard
   } else if (selected === 'entrepreneur') {
-    targetLink = '/signup'; // Redirect to Entrepreneur Dashboard
+    targetLink = '/select/signup'; // Redirect to Entrepreneur Dashboard
   }
 
   return (
     <div className="flex flex-col items-center min-h-screen">
       <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-        <h2 className="mt-10 text-center text-4xl font-medium tracking-tight text-gray-900 font-poppins">
+        <h2 className="mt-10 text-center text-4xl font-bold tracking-tight text-[#0062B6] font-poppins">
           Sign Up
         </h2>
       </div>

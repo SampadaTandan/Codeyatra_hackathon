@@ -1,60 +1,33 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const navigate = useNavigate();
-  const [formData, setFormData] = useState({
-    email: "",
-    password: "",
-  });
 
-  // Handle input changes
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  // Handle form submission
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    try {
-      const response = await fetch("http://localhost:5000/api/auth/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-
-      const data = await response.json();
-
-      if (response.ok) {
-        alert("Login successful!");
-        navigate("/home"); // Redirect to Home page after successful login
-      } else {
-        alert(data.error || "Login failed");
-      }
-    } catch (error) {
-      console.error("Error:", error);
-      alert("Something went wrong!");
-    }
+  const handleLogin = (e) => {
+    e.preventDefault(); // Prevent page reload
+    localStorage.setItem("isLoggedIn", "true");
+    navigate("/"); // Redirect to homepage
+    window.location.reload(); // Force reload to update Navbar
   };
 
   return (
     <>
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-          <h2 className="mt-10 text-center text-4xl font-medium tracking-tight text-gray-900 font-poppins">
+          <h2 className="mt-10 text-center text-4xl font-bold tracking-tight text-[#0062B6] font-poppins">
             Log In
           </h2>
         </div>
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleLogin} className="space-y-6">
             <div>
               <label
                 htmlFor="email"
                 className="block text-md font-medium text-gray-800 font-poppins"
               >
-                Email address
+                Email Address
               </label>
               <div className="mt-2">
                 <input
